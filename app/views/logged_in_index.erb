@@ -1,1 +1,27 @@
-<h1>Your are logged in</h1>
+<p>This is the homepage</p>
+<h1> Taco Flow </h1>
+
+
+<div id='searchForm'>
+  <form action='' method='POST'>
+    <input type='text' name='question' placeholder='What are you looking for?'>
+    <input type='submit' value='SEARCH'>
+  </form>
+</div>
+
+
+<div id='questionForm'>
+  <form action= '' method='POST'>
+    <input type='text' name='title' placeholder='Enter your question here'>
+    <input type='text' name='body' placeholder='Want to expand? Add more detail here'>
+    <input type='submit' value='ASK'>
+  </form>
+
+
+<div id='all_questions'>
+  <% @questions.each do |question| %>
+      <p><a class='expandQuestion' href='/questions/<%= question.id %>'><%= question.title %></a><%= question.user_id %> | <%= question.created_at %>
+      <div id='question_<%= question.id %>'></div>
+      </p>
+ <% end %>
+</div>

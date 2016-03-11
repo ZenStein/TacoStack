@@ -9,7 +9,8 @@ end
 
 post '/questions' do
   #create a new question
-
+  #@question = Question.new()
+    #needs a title, body, and user_id
 end
 
 get 'questions/:id/answers/new' do
