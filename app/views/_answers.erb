@@ -1,0 +1,9 @@
+ <p><% @answers.each do |answer| %></p>
+    <p><%= answer.title %> <%= answer.username %> | <%= answer.timestamp %></p>
+
+    <form action='/question/:id/answers' method='POST'>
+      <input type='text' name='body' placeholder='Have an answer?'>
+      <input id='reply' type='submit' value='REPLY'>
+    </form>
+
+<p><% end %></p>

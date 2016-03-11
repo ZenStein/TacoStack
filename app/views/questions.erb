@@ -1,0 +1,45 @@
+<p>This is the homepage</p>
+<h1> Taco Flow </h1>
+
+<div id='questionForm'>
+  <form action= '' method='POST'>
+    <input type='text' name='title' placeholder='Enter your question here'>
+    <input type='text' name='body' placeholder='Want to expant? Add more detail here'>
+    <input type='submit' value='ASK'>
+  </form>
+</div>
+
+
+<p><% @Questions.each do |question| %></p>
+  <div id='question_<%= question.id %>'>
+    <p><a id='expandQuestion' href=''><%= question.title %></a><%= question.username %> | <%= question.created_at %></p>
+
+      <div id='answerForm'>
+        <form action='/question/<%= question.id %>/answers' method='POST'>
+          <input type='text' name='body' placeholder='Have an answer?'>
+          <input id='reply' type='submit' value='REPLY'>
+        </form>
+      </div>
+
+
+      <p><% @answers.each do |answer| %></p>
+        <div id='answer_<%= answer.id %>'>
+          <p><a id='expandAnswer' href=''><%= answer.title %> </a><%= answer.username %> | <%= answer.created_at %></p>
+
+            <div id='commentForm'>
+              <form action='/answers/<%= answer.id %>/comments' method='POST'>
+                <input type='text' name='body' placeholder='Have an answer?'>
+                <input id='reply' type='submit' value='REPLY'>
+              </form>
+            </div>
+
+          <p><% @comments.each do |comment| %></p>
+            <div id='comment_<%= comment.id %>'>
+             <p><%= comment.title %></p> <%= comment.username %> | <%= comment.created_at %></p>
+            </div>
+          </div>
+        <p><% end %></p>
+      </div>
+    <p><% end %></p>
+  </div>
+<p><% end %></p>
