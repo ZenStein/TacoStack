@@ -9,7 +9,7 @@ users = 10.times.map do
 end
 
 10.times do
-  post = Question.create(title: Faker::Hipster.sentence, body: Faker::Hipster.paragraph(1))
-  5.times { post.answers.create(body: Faker::Hipster.sentence(2)) }
-   post.answers.each { |answer| answer.comments.create(body: Faker::Hipster.sentence(2)) }
+  post = Question.create(title: Faker::Hipster.sentence, body: Faker::Hipster.paragraph(1), user_id: rand(1..10))
+  5.times { post.answers.create(body: Faker::Hipster.sentence(2), user_id: rand(1..10)) }
+   post.answers.each { |answer| answer.comments.create(body: Faker::Hipster.sentence(2), user_id: rand(1..10)) }
 end
