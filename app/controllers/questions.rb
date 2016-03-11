@@ -12,12 +12,6 @@ get 'questions/:id/answers/new' do
 
 end
 
-# create_table :answers do |t|
-#       t.integer :question_id
-#       t.string :body, null: false
-#       t.integer :user_id
-#       t.timestamps(null: false)
-
 post 'questions/:id/answers' do
   #create an answer for a specific question
   #this has not been tested
