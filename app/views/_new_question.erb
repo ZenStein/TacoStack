@@ -1,0 +1,11 @@
+
+<div id='question_<%= @new_question.id %>'>
+    <p><a id='expandQuestion' href=''><%= @new_question.title %></a><%= @new_question.user_id %> | <%= @new_question.created_at %></p>
+</div>
+
+
+<p><% @answers.each do |answer| %></p>
+
+      <p><a id='expandAnswer' href=''><%= answer.title %> </a><%= answer.user_id %> | <%= answer.created_at %></p>
+
+<p><% end %></p>

@@ -1,0 +1,28 @@
+      <div id='answerForm'>
+        <form action='/question/<%= question.id %>/answers' method='POST'>
+          <input type='text' name='body' placeholder='Have an answer?'>
+          <input id='reply' type='submit' value='REPLY'>
+        </form>
+      </div>
+
+
+      <p><% @answers.each do |answer| %></p>
+        <div id='answer_<%= answer.id %>'>
+          <p><a id='expandAnswer' href=''><%= answer.title %> </a><%= answer.user_id %> | <%= answer.created_at %></p>
+
+            <div id='commentForm'>
+              <form action='/answers/<%= answer.id %>/comments' method='POST'>
+                <input type='text' name='body' placeholder='Have an answer?'>
+                <input id='reply' type='submit' value='REPLY'>
+              </form>
+            </div>
+
+          <p><% @comments.each do |comment| %></p>
+            <div id='comment_<%= comment.id %>'>
+             <p><%= comment.title %></p> <%= comment.username %> | <%= comment.created_at %></p>
+            </div>
+          </div>
+        <p><% end %></p>
+      </div>
+    <p><% end %></p>
+  </div>
