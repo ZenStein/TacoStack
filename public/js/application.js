@@ -35,8 +35,7 @@ var showFormAndAnswers = function(event){
 }
 
 var expandQuestion = function(response){
-
-    $('#all_questions').after(response)
+  $('#all_questions').after(response)
 }
 
 
