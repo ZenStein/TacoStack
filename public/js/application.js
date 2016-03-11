@@ -41,6 +41,7 @@ var expandQuestion = function(response){
 
 
 var postAnswer = function(){
+  // here's something
   //do post to database
   //get response
   //put post onto homepage
