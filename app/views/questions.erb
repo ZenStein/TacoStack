@@ -2,9 +2,18 @@
 <h1> Taco Flow </h1>
 
 
-  <form id='questionForm' action= '/questions' method='POST'>
-    <input type='text' name='title' placeholder='Enter your question here'><br>
-    <input type='text' name='body' placeholder='Want to expant? Add more detail here'><br>
+<div id='searchForm'>
+  <form action='' method='POST'>
+    <input type='text' name='question' placeholder='What are you looking for?'>
+    <input type='submit' value='SEARCH'>
+  </form>
+</div>
+
+
+<div id='questionForm'>
+  <form action= '' method='POST'>
+    <input type='text' name='title' placeholder='Enter your question here'>
+    <input type='text' name='body' placeholder='Want to expand? Add more detail here'>
     <input type='submit' value='ASK'>
   </form>
 
