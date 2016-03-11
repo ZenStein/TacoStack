@@ -1,17 +1,17 @@
 <p>This is the homepage</p>
 <h1> Taco Flow </h1>
 
-
+<!--
 <div id='searchForm'>
   <form action='' method='POST'>
     <input type='text' name='question' placeholder='What are you looking for?'>
     <input type='submit' value='SEARCH'>
   </form>
-</div>
+</div> -->
 
 
-<div id='questionForm'>
-  <form action= '' method='POST'>
+
+  <form action='/questions' method='POST' id='questionForm'>
     <input type='text' name='title' placeholder='Enter your question here'>
     <input type='text' name='body' placeholder='Want to expand? Add more detail here'>
     <input type='submit' value='ASK'>
@@ -20,8 +20,11 @@
 
 <div id='all_questions'>
   <% @questions.each do |question| %>
-      <p><a class='expandQuestion' href='/questions/<%= question.id %>'><%= question.title %></a><%= question.user_id %> | <%= question.created_at %>
+      <p>
+      <a class='expandQuestion' href='/questions/<%= question.id %>/answers'><%= question.title %></a>
+      <%= question.user_id %> | <%= question.created_at %>
       <div id='question_<%= question.id %>'></div>
+      <div id="answer_1"></div>
       </p>
  <% end %>
 </div>

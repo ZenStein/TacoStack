@@ -19,12 +19,18 @@ $(document).ready(function () {
 var postQuestion = function(event){
   event.preventDefault()
   var route = $('#questionForm').attr('action');
+  console.log('route')
   var value = $(this).serialize();
+  debugger
   $.post(route, value, printQuestion);
 }
 
 var printQuestion = function(response){
-  $('#all_questions').before(response)
+debugger
+  console.log('response')
+  console.log(response)
+  debugger;
+  $('#all_questions').prepend(response)
 }
 
 var showFormAndAnswers = function(event){
@@ -35,7 +41,7 @@ var showFormAndAnswers = function(event){
 }
 
 var expandQuestion = function(response){
-  $('#all_questions').after(response)
+  $('#answer_1').after(response)
 }
 
 
