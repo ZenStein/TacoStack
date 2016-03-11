@@ -7,20 +7,23 @@ get '/questions/new' do
 
 end
 
-post '/questions' do
-  #create a new question
-  #@question = Question.new()
-    #needs a title, body, and user_id
-end
-
 get 'questions/:id/answers/new' do
   #display the form for a new answer for a specific question
 
 end
 
+# create_table :answers do |t|
+#       t.integer :question_id
+#       t.string :body, null: false
+#       t.integer :user_id
+#       t.timestamps(null: false)
+
 post 'questions/:id/answers' do
   #create an answer for a specific question
-
+  #this has not been tested
+  Answer.create(question_id: params[:question_id], body: params[:body], user_id: session[:id])
+  @answers = Answer.where(question_id: params[:id]).to_a
+  erb :_answers
 end
 
 get '/questions/:id/answers' do
