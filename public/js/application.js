@@ -1,9 +1,18 @@
 $(document).ready(function () {
+
+/*
+*  question id = question_ID where 'ID' references its own id
+*  question_id = question_ID where 'ID' references its own id
+*
+*
+* */
+
   $('#questionForm').on('submit', postQuestion);
   $('#answerForm').on('submit', postAnswer);
   $('#commentForm').on('submit', postComment);
   $('#expandQuestion').on('click', showFormAndAnswers);
   $('#expandAnswer').on('click', showFormAndComments);
+
 
 });
 
