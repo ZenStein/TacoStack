@@ -1,0 +1,3 @@
+<% @answers.each do |answer| %>
+  <p><a id='expandAnswer' href='/questions/<%= @question.id %>/answers'><%= answer.title %> </a><%= answer.user_id %> | <%= answer.created_at %></p>
+<% end %>

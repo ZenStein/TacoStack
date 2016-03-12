@@ -1,5 +1,5 @@
  <p><% @answers.each do |answer| %></p>
-    <p><%= answer.title %> <%= answer.username %> | <%= answer.timestamp %></p>
+    <p><%= answer.body %> <%= answer.user_id %> | <%= answer.created_at %></p>
 
     <form action='/question/:id/answers' method='POST'>
       <input type='text' name='body' placeholder='Have an answer?'>
@@ -7,3 +7,6 @@
     </form>
 
 <p><% end %></p>
+
+
+

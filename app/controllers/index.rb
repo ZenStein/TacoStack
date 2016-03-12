@@ -3,6 +3,7 @@ get '/' do
     @user = User.find(session[:user_id])
     @questions = Question.all
     erb :logged_in_index
+    # previously known as questions
   else
     erb :landing_page #(not logged in)
   end
